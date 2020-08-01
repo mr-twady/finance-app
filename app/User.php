@@ -11,6 +11,14 @@ class User extends Authenticatable
     use Notifiable;
 
     /**
+     * Based on this project's scope and seeded user data
+     * Assigned a default integer value of 1 to be the default user ID
+     * 
+     * @var integer
+     */
+    const DEFAULT_USER_ID = 1;
+
+    /**
      * The attributes that are mass assignable.
      *
      * @var array
@@ -25,7 +33,7 @@ class User extends Authenticatable
      * @var array
      */
     protected $hidden = [
-        'password', 'remember_token',
+        'email_verified_at', 'password', 'remember_token', 'updated_at'
     ];
 
     /**
@@ -36,4 +44,15 @@ class User extends Authenticatable
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
+
+    /**
+     * This returns DEFAULT_USER_ID
+     *
+     * @var integer
+     */
+    public static function getDefaultUserId()
+    {
+        return User::DEFAULT_USER_ID;
+    }
+
 }
