@@ -4,7 +4,7 @@ This project proposal has been put together to help developers who are applying 
 
 ## Installation Guide
 
-- Create a `.env` file, copy the content in `.env.example` and paste into the new file. Appropriately fill up the environment variables according to your system configuration. 
+- Create a `.env` file, copy the content in `.env.example` and paste into the new `.env` file. Appropriately fill up the environment variables according to your system configuration. 
 - Run `composer install`
 - Run `php artisan key:generate`
 - Run `php artisan migrate`
