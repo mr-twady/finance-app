@@ -4,6 +4,8 @@ namespace App\Exceptions;
 
 use Illuminate\Foundation\Exceptions\Handler as ExceptionHandler;
 use Throwable;
+use Symfony\Component\HttpKernel\Exception\MethodNotAllowedHttpException;
+use Symfony\Component\HttpKernel\Exception\NotFoundHttpException;
 
 class Handler extends ExceptionHandler
 {
@@ -50,6 +52,22 @@ class Handler extends ExceptionHandler
      */
     public function render($request, Throwable $exception)
     {
+        if($request->is('api/*'))
+        {
+            if ($exception instanceof MethodNotAllowedHttpException)
+            {    
+                return response()->errorResponse(null, 'Http Method Not Allowed', 405);
+            }
+            if ($exception instanceof NotFoundHttpException)
+            {    
+                return response()->errorResponse(null, 'Route Not Found Http Exception', 404);
+            }
+            if ($exception instanceof TokenMismatchException)
+            {
+                return response()->errorResponse(null, 'Token Mismatch or Expired', 400);
+            }
+        }
+        
         return parent::render($request, $exception);
     }
 }

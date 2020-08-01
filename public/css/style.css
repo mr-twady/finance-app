@@ -1,0 +1,165 @@
+/* 
+ * Finance App
+ * Custom design
+ * Author: Dunsin Olubobokun
+ * Month: July 2020 
+ */
+
+
+/* 
+ * General CSS
+ */
+
+
+body{
+    background: #f5f6fa !important;
+}
+
+.text-finance-primary{
+    color: #0552f5;
+}
+
+.btn-finance-primary{
+    background-color: #0552f5 !important;  
+}
+
+.btn-finance-save{
+    background-color: #0552f5 !important;
+    font-size: 14px !important;
+    height: 45px !important;
+    color: #ffffff !important;
+    padding: 2px 15px 2px 15px !important;  
+}
+
+.btn-finance-cancel{
+    background: #dbe5fa !important;
+    font-size: 14px !important;
+    height: 45px !important;
+    color: #7c90b6 !important;
+    padding: 2px 15px 2px 15px !important;
+}
+
+input{
+   
+    border-color: none !important;
+    box-shadow: none !important;
+    outline: none !important;
+    
+}
+
+
+
+/* 
+ * Navbar and Balance Area
+ */
+
+.navbar{
+    padding: 10px 65px 10px 65px !important;
+}
+.balance-action-area{
+    background: #1a2b4e;
+    padding: 2% 20% 2% 20% !important;
+}
+
+.balance-action-area .action-buttons a{
+    margin: 2px !important;
+}
+
+.balance-action-area .action-buttons a i{
+    font-size: 14px; 
+}
+
+.balance-action-area .action-buttons a span{
+    font-size: 14px;
+    margin: 7px;
+}
+
+.balance-title{
+    color: #dddddd
+}
+
+.balance-green{
+    color: #24bb51;
+}
+
+
+/* 
+ * Main 
+ */
+
+main{
+    padding-top: 70px;
+    padding-left: 20%;
+    padding-right: 20%;
+}
+
+main .label-card{
+    transition: 0.6s ease-in-out;
+}
+
+main .label-card:hover{
+    box-shadow: 2px 4px 8px #999 !important;
+}
+
+main .label-card a{
+    display: none;
+}
+
+main .label-card:hover a{
+    display: inline;
+    cursor: pointer;
+}
+
+
+/* 
+ * Modals
+ */
+
+.modal .modal-header{
+    border-bottom: 1px solid#dbe5fa;
+}
+
+.modal .modal-footer{
+    border-top: 1px solid #dbe5fa;
+}
+
+.modal label{
+    color: #888888;
+    font-weight: 500;
+}
+
+.browse-file{
+    background: #fff;
+    height: 48px;
+    border: 1px solid #000;
+    width: 100%;
+    padding-top: 10px;
+    padding-right: 20px;
+    position: relative;
+    top: -42px;
+    z-index: 1;
+    border: 1px solid #cfd1d4;
+    pointer-events:none;
+}
+
+
+.browse-file:focus{
+    opacity: 0.5;
+}
+
+
+/* 
+ * Media Queries
+ */
+
+@media screen and (max-width:992px) {
+	.balance-action-area, main{
+        padding: 15px !important;
+    }
+    .balance-action-area .container .row div{
+        padding: 4px;
+    }
+    .balance-action-area .container .row div:last-child{
+        text-align: left !important;
+    }
+}
